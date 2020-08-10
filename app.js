@@ -42,7 +42,7 @@ app.post('/register', async (req, res) => {
 
   await user.save((error) => {
     if (error) return console.error(error.message);
-    res.redirect('../');
+    return res.redirect('/');
   });
 });
 
