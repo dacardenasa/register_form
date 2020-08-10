@@ -1,0 +1,30 @@
+{
+  "name": "register_form",
+  "version": "1.0.0",
+  "description": "Challenge 10 express mongoDB Make it Real",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dacardenasa/register_form.git"
+  },
+  "keywords": [
+    "Express",
+    "mongoDB",
+    "NodeJS",
+    "Javascript"
+  ],
+  "author": "Diego Cardenas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dacardenasa/register_form/issues"
+  },
+  "homepage": "https://github.com/dacardenasa/register_form#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.28",
+    "pug": "^3.0.0"
+  }
+}

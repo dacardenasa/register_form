@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1='Users List'
+  div.container
+    a(href='/register')='Register'
+    table
+      thead
+        tr
+          th='Name'
+          th='Email'
+      tbody
+        if (users.length > 0)
+          each user in users
+            tr
+              td=user.name
+              td=user.email

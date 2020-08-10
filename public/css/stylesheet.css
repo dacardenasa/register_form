@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  color: #262727;
+  font-size: 30px;
+  text-align: center;
+  letter-spacing: 0.5em;
+}
+
+table {
+  height: auto;
+  text-align: left;
+  width: 100%;
+}
+
+table thead th {
+  border-radius: 5px 5px 0 0; 
+  font-weight: 900;
+  font-size: 20px;
+}
+
+table thead th,
+table tbody td {
+  background-color: #f9fafb;
+  border: 1px solid #ccc;
+  color: #262727;
+  padding: 20px;
+}
+
+table tbody td {
+  background-color: #fff;
+  font-weight: 400;
+}
+
+a {
+  margin: 0 0 5px 5px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #262727;
+  cursor: pointer;
+  transition: all 300ms;
+}
+
+a:hover {
+  color: brown;
+}
+
+.container {
+  height: 40vh;
+  margin: 0 auto;
+  margin-top: 5vh;
+  width: 60%;
+}
+
+/* Styles user form*/
+
+.user_form {
+  display: flex;
+  flex-flow: column wrap;
+  margin: 0 auto;
+  width: 50%;
+}
+
+.input-form {
+  margin-bottom: 15px;
+}
+
+button {
+  background-color: whitesmoke;
+  cursor: pointer;
+  font-size: 20px;
+  height: 40px;
+  transition: all 300ms;
+  width: 100%;
+}
+
+button:hover {
+  background-color: black;
+  color: white;
+}
