@@ -1,13 +1,15 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
+const bodyParser = require('body-parser');
 const port = 3000;
 
+// Set pug template config
 app.set('view engine', 'pug');
 app.set('views', './public/views');
 
 app.use(express.static('public'));
-app.use(express.urlencoded());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 mongoose.connect('mongodb://localhost:27017/mongo-1', 
 { useNewUrlParser: true });
@@ -20,7 +22,7 @@ let schema = mongoose.Schema({
   password: String
 }, { collection: 'users' });
 
-let User = mongoose.model('User', schema);
+const User = mongoose.model('User', schema);
 
 app.get('/', async (req, res) => {
   const users = await User.find();
