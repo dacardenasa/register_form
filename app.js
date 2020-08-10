@@ -32,21 +32,38 @@ app.get("/", async (req, res) => {
   res.render("index", { users: users });
 });
 
-app.get("/register", (req, res) => {
-  res.render("form");
-});
+app.route('/register')
+  .get((req, res) => {
+    res.render("form");
+  })
+  .post(async (req, res) => {
+    const user = new User({
+      name: req.body.name,
+      email: req.body.email,
+      password: req.body.password,
+    });
+  
+    await user.save((error) => {
+      if (error) return console.error(error.message);
+      return res.redirect("/");
+    });
+  })
 
-app.post("/register", async (req, res) => {
-  const user = new User({
-    name: req.body.name,
-    email: req.body.email,
-    password: req.body.password,
-  });
-
-  await user.save((error) => {
-    if (error) return console.error(error.message);
-    return res.redirect("/");
-  });
-});
+// app.get("/register", (req, res) => {
+//   res.render("form");
+// });
+// 
+// app.post("/register", async (req, res) => {
+//   const user = new User({
+//     name: req.body.name,
+//     email: req.body.email,
+//     password: req.body.password,
+//   });
+// 
+//   await user.save((error) => {
+//     if (error) return console.error(error.message);
+//     return res.redirect("/");
+//   });
+// });
 
 app.listen(port, () => console.log(`Listening on port ${port}!`));
