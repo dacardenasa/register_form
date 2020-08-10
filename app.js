@@ -25,7 +25,7 @@ let schema = mongoose.Schema({
 let User = mongoose.model('User', schema);
 
 app.get('/', async (req, res) => {
-  let users = await User.find({});
+  let users = await User.find();
   res.render('home', { users: users });
 });
 
