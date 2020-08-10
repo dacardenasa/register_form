@@ -7,9 +7,7 @@ app.set('view engine', 'pug');
 app.set('views', './public/views');
 
 app.use(express.static('public'));
-app.use(express.urlencoded({
-  extended: true
-}));
+app.use(express.urlencoded());
 
 mongoose.connect('mongodb://localhost:27017/mongo-1', 
 { useNewUrlParser: true });
@@ -25,12 +23,12 @@ let schema = mongoose.Schema({
 let User = mongoose.model('User', schema);
 
 app.get('/', async (req, res) => {
-  let users = await User.find();
-  res.render('home', { users: users });
+  const users = await User.find();
+  res.render('index', { users: users });
 });
 
 app.get('/register', (req, res) => {
-  res.render('register_form');
+  res.render('form');
 });
 
 app.post('/register', async (req, res) => {
