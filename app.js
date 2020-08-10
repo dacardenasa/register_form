@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const app = express();
 const bodyParser = require('body-parser');
+const app = express();
 const port = 3000;
 
 // Set pug template config
@@ -42,8 +42,8 @@ app.post('/register', async (req, res) => {
 
   await user.save((error) => {
     if (error) return console.error(error.message);
+    res.redirect('../');
   });
-  res.redirect('../');
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}!`));
