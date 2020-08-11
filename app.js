@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
 const port = 3000;
+require("dotenv").config();
 
 // Set pug template config
 app.set("view engine", "pug");
@@ -10,7 +11,7 @@ app.set("views", "./public/views");
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 
-mongoose.connect("mongodb://localhost:27017/mongo-1", {
+mongoose.connect(process.env.MONGODB_URL || "mongodb://localhost:27017/mongo-1", {
   useNewUrlParser: true,
 });
 
